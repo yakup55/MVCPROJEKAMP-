@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concerete.Category
+@{
+
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<H1>KATEGORİ EKLEME SAYFASI</H1>
+
+<br />
+@using (Html.BeginForm("AddCategory", "AdminCategory", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("KATEGORİ ADI")
+        @Html.TextBoxFor(X => X.CategoryName, new { @class = "form-conttrol" })
+        @Html.ValidationMessageFor(x => x.CategoryName)
+
+        <br />
+        @Html.Label("AÇIKLAMA YAZINIZ")
+        @Html.TextAreaFor(X => X.CategoryName, new { @class = "form-conttrol" })
+        @Html.ValidationMessageFor(x => x.CategoryDescription)
+        
+        <button class="btn btn-info">KAYDET</button>
+    </div>
+}
+

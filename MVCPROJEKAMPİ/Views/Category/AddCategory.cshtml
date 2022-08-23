@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concerete.Category
+
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<H1>KATEGORİ EKLEME SAYFASI</H1>
+
+<br />
+@using (Html.BeginForm("AddCategory","Category",FormMethod.Post)) { 
+<div class="form-group">
+    @Html.Label("KATEGORİ ADI")
+    @Html.TextBoxFor(X => X.CategoryName)
+    @Html.ValidationMessageFor(x => x.CategoryName)
+
+    <BR />
+    @Html.Label("AÇIKLAMA YAZINIZ")
+    @Html.TextBoxFor(X => X.CategoryName)
+    @Html.ValidationMessageFor(x => x.CategoryDescription)
+    <br />
+    <button>KAYDET</button>
+</div>
+}
+@*BUTONA TIKLAYINCA ÇALIŞCAK*@
+@*<form class="form-group" method="post">
+    <input type="text" placeholder="Kategori Adı" name="CategoryName" class="form-control" />
+    <input type="text" placeholder="Açıklama Giriniz" name="CategoryDescription" class="form-control" />
+    <button class="btn btn-primary">EKLE</button>
+</form>*@

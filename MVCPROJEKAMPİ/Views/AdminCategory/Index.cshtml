@@ -1,0 +1,30 @@
+﻿@using EntityLayer.Concerete
+@model List<Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>KATEGORİ ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>BAŞLIKLAR</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <th>@x.CategoryId</th>
+            <th>@x.CategoryName</th>
+            <th><a href="/AdminCategory/DeleteCategory/@x.CategoryId" class="btn btn-danger">SİL</a> </th>
+            <th><a href="/AdminCategory/UpdateCategory/@x.CategoryId" class="btn btn-warning">GÜNCELLE</a> </th>
+            <th><a href="#" class="btn btn-primary">BAŞLIKLAR</a> </th>
+        </tr>
+    }
+</table>
+<a href="/AdminCategory/AddCategory" class="btn btn-primary">YENİ KATEGORİ</a>

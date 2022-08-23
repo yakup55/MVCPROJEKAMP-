@@ -1,0 +1,31 @@
+﻿@using EntityLayer.Concerete
+@model List<Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kullanıcı Mail</th>
+        <th>Yetki</th>
+        <th>Status</th>
+        <th>Pasif Yap</th>
+        <th>Yetki Değiştir</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Adminid</td>
+            <td>@x.AdminUserName</td>
+            <td>@x.AdminRole</td>
+            <td>Aktif</td>
+            <td ><a href="@x.Adminid"class="btn btn-danger">Pasif Yap</a></td>
+            <td><a href= "/Authorization/EditAdmin/@x.Adminid"class=" btn btn-warning">Yetki Değiştir</a></td>
+        </tr>
+            }
+        
+    </table>
+<a class="btn btn-primary" href="/Authorization/AdminAdd">Admin Ekle</a>

@@ -1,0 +1,28 @@
+﻿@using EntityLayer.Concerete
+@model List<About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkımda Paneli</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Hakkımda Başlığı</th>
+        <th>Aktif Yap</th>
+        <th>Pasif Yap</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <th>@x.AboutId</th>
+            <th>Başlık</th>
+           
+            <th><a href="#">Aktif Yap</a></th>
+            <th><a href="#">Pasif Yap</a></th>
+        </tr>
+    }
+</table>
+
+@Html.Action("AboutPartiel","About")

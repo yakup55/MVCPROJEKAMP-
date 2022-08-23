@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Concerete.Heading
+@{
+    ViewBag.Title = "WriterEditHeading";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+<h2>Başlık Düzenleme Paneli</h2>
+
+@using (Html.BeginForm("WriterEditHeading", "WriterPanel", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.HeadinId)
+        @Html.HiddenFor(x => x.HeadingDate)
+        @Html.HiddenFor(x => x.WriterId)
+        @Html.Label("Başlık Ad")
+        @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kategori ")
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Güncelle</button>
+
+    </div>
+}

@@ -1,0 +1,21 @@
+﻿@model EntityLayer.Concerete.Heading
+@{
+    ViewBag.Title = "NewHeading";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+<h2>Başlık Ekleme Paneli</h2>
+<div class="form-group">
+    @using (Html.BeginForm("NewHeading", "WriterPanel", FormMethod.Post))
+    {
+        @Html.Label("Başlık Adı")
+        @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.HeadingName)
+        <br />
+        @Html.Label("Kategori")
+
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CategoryId)
+        <br />
+        <button class="btn btn-info">Başlık Ekle</button>
+    }
+</div>

@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Concerete.Admin
+@{
+    ViewBag.Title = "AdminAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Admin Ekleme Paneli</h2>
+@using (Html.BeginForm("AdminAdd", "Authorization", FormMethod.Post))
+{
+    @Html.Label("Admin Maili")
+    @Html.TextBoxFor(x => x.AdminUserName, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Şifreniz")
+    @Html.TextBoxFor(x => x.AdminPaswordName, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Rolü Seçiniz")
+    @Html.TextBoxFor(x => x.AdminRole, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">Kaydet</button>
+}
+

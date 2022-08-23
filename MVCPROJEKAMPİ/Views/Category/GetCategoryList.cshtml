@@ -1,0 +1,24 @@
+﻿@using EntityLayer.Concerete
+@model List<Category>
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>AD</th>
+        <th>DURUM</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <th>@x.CategoryId</th>
+            <th>@x.CategoryName</th>
+            <th>@x.CategoryStatus</th>
+        </tr>
+    }
+</table>
+<a href="/Category/AddCategory"  class="btn btn-primary">YENİ KATEGORİ</a>
+
